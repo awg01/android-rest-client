@@ -18,3 +18,6 @@ Response
     "id": "680",  
     "createdAt": "2022-04-09T11:31:32.217Z"  
 }    
+
+post
+http://springbootblog-env.eba-kwzwgbpj.us-east-1.elasticbeanstalk.com/api/posts/
