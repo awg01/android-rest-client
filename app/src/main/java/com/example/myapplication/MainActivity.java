@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         apiCall.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
+                String resp = response.code()+"\t"+response.body().getId()+"\t"+response.body().getTitle()+"\t"+response.body().getDescription()+"\t"+response.body().getContent();
+                Toast.makeText(getApplicationContext(),resp,Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "onResponse: "+response.code());
                 Log.e(TAG, "onResponse: id "+response.body().getId());
                 Log.e(TAG, "onResponse: title "+response.body().getTitle());
