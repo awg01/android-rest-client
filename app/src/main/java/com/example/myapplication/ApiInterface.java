@@ -10,4 +10,7 @@ public interface ApiInterface {
    @POST("/api/users")
    Call<User> getUserInfo(@Field("name") String name, @Field("job") String job);
 
+    @FormUrlEncoded
+    @POST("/api/posts")
+    Call<Post> getPostInfo(@Field("title") String title, @Field("description") String desc, @Field("content") String content);
 }

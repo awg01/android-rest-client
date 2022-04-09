@@ -16,4 +16,15 @@ public class RetrofitClient {
         }
         return retrofit;
     }
+
+    public static Retrofit getPostInstance(){
+        if(retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl("http://springbootblog-env.eba-kwzwgbpj.us-east-1.elasticbeanstalk.com/api/posts/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+        }
+        return retrofit;
+    }
 }
